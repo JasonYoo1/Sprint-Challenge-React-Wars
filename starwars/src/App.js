@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './App.css';
 import CharCard from './CharCard'
-import {Header} from './Style'
+import { Header, Element, pop } from './Style'
 
 const App = () => {
   const [resultsArray, setresultsArray] = useState([]);
@@ -27,6 +27,7 @@ const App = () => {
         return <div className = 'App'>
           {/* You must have at least one element for each star wars character in the data set. */}
          <Header> <h1>Character Name and Height: </h1></Header><CharCard name ={card.name} height ={card.height}  />
+              <Element>Random fact! {card.name} weighs: <CharCard mass ={card.mass}/></Element>
               </div>
       })}
     </div>
