@@ -22,7 +22,7 @@ const App = () => {
     <div className="App">
       <h1 className="Header">React Wars</h1>
 
-      {/* //used map */}
+      {/* .map in CharCard component to break down keys*/}
       {resultsArray.map(card =>{
         return <div className = 'App'>
           {/* You must have at least one element for each star wars character in the data set. */}
