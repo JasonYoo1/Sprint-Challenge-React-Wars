@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './App.css';
 import CharCard from './CharCard'
+import {Header} from './Style'
 
 const App = () => {
   const [resultsArray, setresultsArray] = useState([]);
 
   useEffect( () => {
-    // Follow the documentation to learn how to fetch a list of "people"
+    // list of "people"
     axios.get('https://swapi.co/api/people/')
     .then (res => {
       console.log(res.data.results);
@@ -25,7 +26,7 @@ const App = () => {
       {resultsArray.map(card =>{
         return <div className = 'App'>
           {/* You must have at least one element for each star wars character in the data set. */}
-          <h1>Character Name and Height: </h1><CharCard name ={card.name} height ={card.height} />
+         <Header> <h1>Character Name and Height: </h1></Header><CharCard name ={card.name} height ={card.height}  />
               </div>
       })}
     </div>
