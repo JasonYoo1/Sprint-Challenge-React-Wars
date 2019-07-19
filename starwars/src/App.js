@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import './App.css';
 import CharCard from './CharCard'
-import { Header, Element, pop } from './Style'
+import { Header, Element} from './Style'
 
 const App = () => {
+  //Created State 
   const [resultsArray, setresultsArray] = useState([]);
 
   useEffect( () => {
     // list of "people"
-    axios.get('https://swapi.co/api/people/')
+    axios.get('https://henry-mock-swapi.herokuapp.com/api')
     .then (res => {
       console.log(res.data.results);
       // Fetch a list of Star Wars characters from the Star Wars API (or SWAPI) and render them to the screen.
